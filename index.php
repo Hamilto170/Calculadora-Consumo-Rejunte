@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang = "pt-br">
+
 <head>
    <title>Calculadora Consumo Rejunte Inkor</title>
    <img src="logo.png" alt="some text" width=310 height=75> 
@@ -22,7 +22,7 @@
  
     <font size="5" color="black"> <b>Profundidade: Conforme tabela 1:</b> <input type="text" name="prof" style="width:90px; height:25px;"><br> </font>
     <font size="5" color="black"> <b>Largura da fuga em mm:</b> <input type="text" name="laf" style="width:90px; height:25px;"><br> </font>
-<font size="6" color="red"> <b>Tipo de Rejunte</b> </font>
+<font size="6" color="red"> <b>Tipo de Rejunte</b></font>
     
     <font size="5" color="black"> <b>Coeficientes: Conforme tabela 2:</b> <input type="text" name="coef" style="width:90px; height:25px;"><br> </font> 
  <input type="submit" style="width: 110px; height: 35px; background-color:#fa0000; font-family:sans-serif "name="total" value="CALCULAR">
@@ -50,11 +50,12 @@
   $mqa = isset($_POST['mqa']) ? $_POST['mqa'] : '';   
    
     if( !empty($total) ) {
-     if($total == 'CALCULAR')
-      $total = (((($lar*10)+($comp*10))*$prof*$laf*$coef)/($lar*$comp*100))*$mqa;
-   }
-             echo "<pre> <b>O resultado do Consumo é: $total KG</b>;";
-          
+     if ($total == 'CALCULAR')
+    {
+        $total = (((($lar * 10) + ($comp * 10)) * $prof * $laf * $coef) / ($lar * $comp * 100)) * $mqa;
+    }
+}
+            
+          echo "<b><font size='6'> O resultado do Consumo é $total KG</font></b>;";
 ?>       
 </body>
-</html>
