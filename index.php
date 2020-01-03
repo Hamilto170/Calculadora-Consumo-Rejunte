@@ -2,54 +2,56 @@
 <html lang = "pt-br">
 <head>
    <title>Calculadora Consumo Rejunte Inkor</title>
+   <img src="logo.png" alt="some text" width=310 height=75> 
    <meta charset = "UTF-8">
-    <font size="4">
-</head>
+    <br/>
+    <font style="font-family:fantasy"size="12" >
+    <p>CALCULADORA&nbsp;&nbsp;CONSUMO&nbsp;&nbsp;DE&nbsp;&nbsp;REJUNTE</p> </font>
+    <pre>
+</head> 
 <body>
-   <form action="" method="post" >
-       
-       <pre> CALCULADORA CONSUMO REJUNTE INKOR 
-       <pre>   
-      Largura em cm: <input name="num1" type="text"><br>
-      Comprimento em cm: <input name="num2" type="text"><br>
-      Metros Quadrados de Assentamento m²: <input name="mqa" type="text"><br>   
-      
+<font size="6" color="Black"> <b>Insira as medidas abaixo:</b>
 
-      Profundidade: Conforme tabela 1
-       <input name = "prof" type="text"><br>
-       Largura da fuga em mm:
-       <input name = "laf" type="text"><br>
-       Coeficientes: Conforme tabela 2
-       <input name = "coef" type="text"><br>
-       <input type="submit" name="operacao" value="Calcular">
-   <form> 
+<form action="" method="post">
+<font size="6 " color="red"> <b>Área da Peça</b></font>
 
-         TABELA 1                               TABELA 2
-         
-         PROFUNDIDADE                           COEFICIENTES
+    <font size="5" color="black"> <b>Largura em cm:</b>  <input type="text" name="lar" style="width:90px; height:25px;"><br> </font>
+    <font size="5" color="black"> <b>Comprimento em cm:</b> <input type="text" name="comp" style="width:90px; height:25px;"><br> </font>
+    <font size="5" color="black"> <b>Metros Quadrados de Assentamento M²:</b> <input type="text" name="mqa" style="width:90px; height:25px;"><br> </font>          
+<font size="6" color="red"> <b>Dimensões da Junta</b></font> 
+ 
+    <font size="5" color="black"> <b>Profundidade: Conforme tabela 1:</b> <input type="text" name="prof" style="width:90px; height:25px;"><br> </font>
+    <font size="5" color="black"> <b>Largura da fuga em mm:</b> <input type="text" name="laf" style="width:90px; height:25px;"><br> </font>       
+    <font size="5" color="black"> <b>Coeficientes: Conforme tabela 2:</b> <input type="text" name="coef" style="width:90px; height:25px;"><br> </font> 
+ <input type="submit" style="width: 110px; height: 35px; background-color:#fa0000; font-family:sans-serif "name="total" value="CALCULAR">
+   </form>
+    <font size="6" style="background-color:#fa0000"> <b>TABELA 1</b> </font>                    <font size="6" style="background-color:#fa0000"> <b>TABELA 2</b> </font>
+          
+    <font size="5"> <b>PROFUNDIDADE</b>                          <b>COEFICIENTES</b>
                                     
-         PISO:8                                 REJUNTE:1.75
-         PORCELANATO:8                          HIPER:1.75
-         PASTILHA:4                             HIPER PLUS:1.75
-         PEDRA: MEDIR                           RESIKOR:2.54
-                                                ACRILICO:1.58
+      <b>PISO</b>:8                                 <b>REJUNTE</b>:1.75
+      <b>PORCELANATO</b>:8                          <b>HIPER</b>:1.75
+      <b>PASTILHA</b>:4                             <b>HIPER PLUS</b>:1.75
+      <b>PEDRA</b>:MEDIR                            <b>RESIKOR</b>:2.54
+                                             <b>ACRILICO</b>:1.58
        <pre>
       
 <?php
   
-   $lar = $_POST['num1'];
-   $tota= $_POST['operacao'];
-   $comp= $_POST['num2'];
-   $prof= $_POST['prof'];
-   $lf= $_POST['laf'];
-   $coef= $_POST["coef"];
-   $mqa= $_POST['mqa'];   
+          
+  $lar = isset($_POST['lar']) ? $_POST['lar'] : '';
+  $total = isset($_POST['total']) ? $_POST['total'] : '';
+  $comp = isset($_POST['comp']) ? $_POST['comp'] : '';
+  $prof = isset($_POST['prof']) ? $_POST['prof'] : '';
+  $laf = isset($_POST['laf']) ? $_POST['laf'] : '';
+  $coef = isset($_POST['coef']) ? $_POST['coef'] : '';
+  $mqa = isset($_POST['mqa']) ? $_POST['mqa'] : '';   
    
-    if( !empty($tota) ) {
-     if($tota == 'Calcular')
-      $tota = (((($lar*10)+($comp*10))*$prof*$lf*$coef)/($lar*$comp*100))*$mqa;
+    if( !empty($total) ) {
+     if($total == 'CALCULAR')
+      $total = (((($lar*10)+($comp*10))*$prof*$laf*$coef)/($lar*$comp*100))*$mqa;
    }
-            echo "<pre> O resultado do Consumo é: $tota KG";
+             echo "<pre> <b>O resultado do Consumo é: $total KG</b>;";
           
 ?>       
 </body>
