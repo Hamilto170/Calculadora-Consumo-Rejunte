@@ -21,7 +21,9 @@
 <font size="6" color="red"> <b>Dimensões da Junta</b></font> 
  
     <font size="5" color="black"> <b>Profundidade: Conforme tabela 1:</b> <input type="text" name="prof" style="width:90px; height:25px;"><br> </font>
-    <font size="5" color="black"> <b>Largura da fuga em mm:</b> <input type="text" name="laf" style="width:90px; height:25px;"><br> </font>       
+    <font size="5" color="black"> <b>Largura da fuga em mm:</b> <input type="text" name="laf" style="width:90px; height:25px;"><br> </font>
+<font size="6" color="red"> <b>Tipo de Rejunte</b> </font>
+    
     <font size="5" color="black"> <b>Coeficientes: Conforme tabela 2:</b> <input type="text" name="coef" style="width:90px; height:25px;"><br> </font> 
  <input type="submit" style="width: 110px; height: 35px; background-color:#fa0000; font-family:sans-serif "name="total" value="CALCULAR">
    </form>
